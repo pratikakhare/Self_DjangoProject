@@ -13,8 +13,8 @@
     
     <div class="container mt-5">
         <h2>User Form</h2>
-        <form>
-           
+        <form method="POST">
+{% csrf_token %}           
             <div class="mb-3">
                 <label for="number" class="form-label">Number</label>
                 <input type="text" class="form-control" name="num1" required>

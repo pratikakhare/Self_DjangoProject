@@ -1,5 +1,7 @@
 from django.http import HttpResponse
 from django.shortcuts import render
+from django.http import HttpResponseRedirect
+
 def first(request):
     return HttpResponse("<b>Hello, world. You're at the first index.</b>")
 
@@ -20,9 +22,11 @@ def home(request):
 def userform(request):
     total = 0
     try:
-        n1 = int(request.GET.get('num1'))
-        n2 = int(request.GET.get('num2'))
-        total = n1 + n2
+        if request.method == "POST":
+            n1 = int(request.POST['num1'])
+            n2 = int(request.POST['num2'])
+            total = n1 + n2
     except:
         pass    
     return render(request,"userform.html", {'total':total})
+
