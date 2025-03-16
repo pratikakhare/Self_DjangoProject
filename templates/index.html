@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<head>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+
+    <div class="conta">
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolores, quos?</p>
+    <h1>Lorem, ipsum dolor.</h1>
+
+    <div class="in">{{data}}</div>
+    {% for i in clist %}
+
+    <input type="text" placeholder="{{forloop.counter}} {{i}}">
+    {% endfor %}
+
+    <!-- Table -->
+    <table border="1" cellpadding="10">
+        <tr>
+            <th>Name</th>
+            <th>Age</th>
+            <th>count</th>
+        </tr>
+
+        {% for d in stu_det %}
+        <tr>
+            <td>{{d.name}}</td>
+            <td>{{d.age}}</td>
+            <td>{{number}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <!-- <img src="/static/img/QR.jpg" width="200px" height="200px" alt=""> -->
+</div>
+
+
+{% endblock %}

@@ -21,4 +21,6 @@ from self_django_project import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('first/',views.first),
+    path('',views.home),
+    path('userform/', views.userform),
 ]
